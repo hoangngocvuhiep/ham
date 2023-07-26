@@ -185,19 +185,36 @@ public class DoAn1 {
 	}
 
 	public static void xoa() {
-		int i = n;
-		System.out.print("Nhập mã muốn xóa : ");
-		for (int n = 0; i < x; i++) {
-			if (0 < n) {
-				masp[i] = masp[i + 1];
-				tensp[i] = tensp[i + 1];
-				nsx[i] = nsx[i + 1];
-				donvi[i] = donvi[i + 1];
-				sluong[i] = sluong[i + 1];
-				gia[i] = gia[i + 1];
-				ttien[i] = ttien[i + 1];
+		Scanner sc = new Scanner(System.in);
+		try {
+			if (x <= 0) {
+				System.out.println("Dữ liệu không tồn tại");
+				return;
 			}
-		}
+			xuat();
+			System.out.print("Nhập mã muốn xóa : ");
+			int c = sc.nextInt();
+			for (int i = 0; i < x; i++) {
+				if (c == masp[i]) {
+					for (int j = i; j < x - 1; j++) {
+						masp[j] = masp[j + 1];
+						tensp[j] = tensp[j + 1];
+						nsx[j] = nsx[j + 1];
+						donvi[i] = donvi[i + 1];
+						sluong[i] = sluong[i + 1];
+						gia[i] = gia[i + 1];
+						ttien[i] = ttien[i + 1];
+					}
+					x--;
+					System.out.println("Delete success");
+					xuat();
+					return;
+				}
+			}
+			System.out.println("không tìm thấy" + c);
+		} catch (Exception e) {
+	System.out.println("lỗi đầu vào" + e.getMessage());
+}
 	}
 
 	public static void timkiem() {
