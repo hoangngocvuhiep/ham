@@ -27,7 +27,7 @@ public class DoAn1 {
 			key = sc.next();
 			switch (key) {
 				case "1":
-					x = nhapsoluongsach();
+					x = nhapsosanpham();
 					masp = new int[x];
 					tensp = new String[x];
 					nsx = new int[x];
@@ -92,12 +92,12 @@ public class DoAn1 {
 		System.out.println("|----------------------------|");
 	}
 
-	public static int nhapsoluongsach() {
+	public static int nhapsosanpham() {
 		Scanner sc = new Scanner(System.in);
 		try {
 			int x;
 			do {
-				System.out.print("Nhập số lượng sách : ");
+				System.out.print("Nhập số sản pham : ");
 				x = sc.nextInt();
 			} while (x <= 0);
 			return x;
@@ -133,7 +133,7 @@ public class DoAn1 {
 	public static void in() {
 		System.out.println("---------------------------------------------------------------------------");
 		System.out.printf("%-15s %-15s %-15s %-15s %-15s %-20s %-20s\n",
-				"Mã S.Phẩm |", "Tên S.Phẩm |", "Năm S.Xuất |", "Đơn Vị |", "Số lượng |", "Giá sản phẩm |","Thành Tiền |");
+				"Mã S.Phẩm |", "Tên S.Phẩm |", "Năm S.Xuất |", "Đơn Vị |", "Số lượng |", "Giá sản phẩm |","Thành Tiền Sản Phẩm|");
 		}
 
 	public static void xuat() {
